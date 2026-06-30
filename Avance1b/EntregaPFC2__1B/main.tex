@@ -1,0 +1,291 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, top=3cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{caption}
+
+% Nombres en español (no se usa babel)
+\renewcommand{\contentsname}{Tabla de contenido}
+\renewcommand{\listfigurename}{Índice de figuras}
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\captionsetup[longtable]{
+    width=0.95\textwidth
+}
+\begin{document}
+
+%--------------------------------------------------
+% PORTADA
+%--------------------------------------------------
+
+\begin{titlepage}
+\centering
+
+\textbf{\large UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}\\[0cm]
+
+\includegraphics[width=5cm]{imagenes/logo.png}
+
+\textbf{PRÁCTICA EXPERIMENTAL - UNIDAD II}\\[0.8cm]
+
+\textbf{TEMA:}\\[0.2cm]
+
+AQUAGUEST - SISTEMA PARA LA GESTIÓN INTELIGENTE DE UNA CAMARONERA.\\[0.8cm]
+
+\textbf{INTEGRANTES:}\\[0.3cm]
+
+CASTRO BAJAÑA ARIEL OMAR\\[0.5cm]
+CRESPO ESPINOZA KLEBER OBED\\[0.5cm]
+GAMARRA ARAUJO EDHU XAVIER\\[0.5cm]
+PEREZ RUIZ CARLOS ANDRES\\[0.5cm]
+QUINTERO GENDE ERICK JAHIR\\[0.8cm]
+
+\textbf{ASIGNATURA:}\\[0.2cm]
+
+INGENIERÍA DE REQUERIMIENTOS\\[0.5cm]
+
+\textbf{CURSO:}\\[0.2cm]
+
+4TO ``A'' SOFTWARE\\[0.5cm]
+
+\textbf{FECHA:}\\[0.2cm]
+
+13/06/2026\\[0.8cm]
+
+\textbf{DOCENTE:}\\[0.2cm]
+
+ING. GUERRERO ULLOA GLEISTON CICERON\\[0.5cm]
+
+\textbf{LINK DE GITHUB:}\\[0.2cm]
+
+\url{https://github.com/EdhuXav/Proyecto_IR_Camaronera_CCGaPQ}
+\end{titlepage}
+
+% ---------------------------------------------------------------------
+% HISTORIAL DE VERSIONES
+% ---------------------------------------------------------------------
+\section*{Historial de versiones}
+
+\begin{longtable}{|p{2cm}|p{2.5cm}|p{4cm}|p{7cm}|}
+\hline
+\textbf{Versión} & \textbf{Fecha} & \textbf{Autor} & \textbf{Descripción} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Versión} & \textbf{Fecha} & \textbf{Autor} & \textbf{Descripción} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+1.0 & 31/05/2026 & Castro, Crespo, Gamarra, Pérez, Quintero & Entrega 1A: portada, introducción, descripción general, plan de IR y evidencias de elicitación. \\
+\hline
+
+2.0 & 27/06/2026 & Castro, Crespo, Gamarra, Pérez, Quintero & Entrega 2 (1B): formalización de requisitos, modelado UML, priorización MoSCoW y matriz de trazabilidad. \\
+\hline
+
+\end{longtable}
+
+\newpage
+\tableofcontents
+\listoffigures
+\listoftables
+
+
+% =====================================================================
+\section{Introducción}
+% =====================================================================
+
+\subsection{Propósito del documento}
+
+
+\subsection{Alcance del producto}
+
+
+\subsection{Definiciones, acrónimos y abreviaturas}
+
+
+
+\subsection{Referencias}
+
+
+
+% =====================================================================
+\section{Descripción general}
+% =====================================================================
+
+\subsection{Perspectiva del producto}
+
+
+\subsection{Funciones del producto}
+
+
+\subsection{Clases y características de usuarios}
+
+
+
+\subsection{Mapa de stakeholders}
+
+
+\subsection{Entorno operativo}
+
+\subsection{Restricciones}
+
+\subsection{Suposiciones y dependencias}
+
+
+\section{Requisitos específicos}
+
+
+\subsection{Interfaces externas}
+
+\subsubsection{Interfaz de usuario}
+
+
+\subsubsection{Interfaz de hardware}
+
+
+
+\subsubsection{Interfaz de software}
+
+
+
+\subsection{Requisitos funcionales}
+
+
+\subsection{Requisitos no funcionales}
+
+
+
+\subsection{Restricciones de diseño}
+
+
+% =====================================================================
+\section{Modelado del sistema (UML)}
+% =====================================================================
+
+\subsection{Diagrama de casos de uso general}
+
+\subsection{Especificación textual de casos de uso}
+
+
+
+\subsection{Diagrama de clases conceptual}
+
+% =====================================================================
+\section{Priorización y trazabilidad}
+
+
+
+% =====================================================================
+\subsection{Clasificación de requisitos}
+
+
+
+\subsection{Priorización MoSCoW}
+
+
+\subsection{Matriz de trazabilidad parcial}
+
+
+
+% =====================================================================
+\section{Conclusiones}
+% =====================================================================
+\subsection{Logros de la Entrega}
+
+
+\subsection{Decisiones de Diseño Tempranas}
+
+
+\subsection{Trabajo Pendiente}
+
+
+% =====================================================================
+\section*{Referencias}
+% =====================================================================
+
+\newpage
+\appendix
+
+\section{Plan del proyecto de Ingeniería de Requerimientos}
+
+\subsection{Roles del Equipo}
+
+
+\subsection{Cronograma de Actividades de Ingeniería de Requisitos}
+
+
+\subsection{Mapa de Stakeholders}
+
+
+\subsection{Técnicas de Elicitación Seleccionadas y Justificación}
+
+\section{Trabajo de campo y evidencias}
+
+\subsection{Registro/catálogo de evidencias}
+
+\subsection{Guía de entrevista}
+
+\subsection{Actas de entrevista firmadas}
+
+\subsection{Cuestionario y resultados}
+
+\subsection{Registro de observación}
+
+\subsection{Formularios de consentimiento firmados}
+
+\subsection{Índice de multimedia}
+
+\section{Clasificación y priorización MoSCoW (detalle completo)}
+
+\subsection{Clasificación de Requisitos}
+
+
+\subsection{Detalle de Restricciones clasificadas}
+
+
+
+\subsection{Priorización MoSCoW por Requisito Funcional}
+
+
+
+
+\subsection{Priorización MoSCoW por Requisito No Funcional}
+
+
+
+
+\subsection{Justificación de los Extremos (Must y Won't)}
+
+
+
+
+
+
+\section{Matriz de trazabilidad parcial (completa)}
+
+
+\subsection{Propósito y Alcance}
+
+\subsection{Matriz de Trazabilidad}
+
+
+
+\subsection{Cobertura de Trazabilidad}
+
+\section{Repositorio GitHub}
+
+\end{document}
