@@ -65,7 +65,7 @@ ING. GUERRERO ULLOA GLEISTON CICERON\\[0.5cm]
 
 \textbf{LINK DE GITHUB:}\\[0.2cm]
 
-\url{https://github.com/EdhuXav/Proyecto_IR_Camaronera_CCGaPQ}
+\url{}
 \end{titlepage}
 
 % ---------------------------------------------------------------------
@@ -109,17 +109,147 @@ ING. GUERRERO ULLOA GLEISTON CICERON\\[0.5cm]
 % =====================================================================
 
 \subsection{Propósito del documento}
+El presente documento constituye la Especificación de Requisitos de Software (ERS/SRS) del Sistema para la Gestión Inteligente de una Camaronera, denominado \textbf{AquaGest}, elaborado conforme al estándar IEEE/ISO/IEC 29148:2018~\cite{ieee29148} en el marco de la asignatura \textit{Ingeniería de Requerimientos} (4to nivel) de la Carrera de Ingeniería de Software de la Universidad Técnica Estatal de Quevedo (UTEQ).
 
+El documento está dirigido a los siguientes interesados:
+
+\begin{itemize}
+    \item \textbf{Desarrolladores de software:} como especificación técnica de las funcionalidades que deberá implementar el sistema.
+    \item \textbf{Equipo de pruebas (testers):} como base para el diseño de casos de prueba y criterios de aceptación.
+    \item \textbf{Stakeholders del cliente (Compañía Biofina):} para validar que el sistema satisfaga sus necesidades operativas y de negocio.
+    \item \textbf{Docente evaluador:} para la revisión académica del proceso de ingeniería de requisitos aplicado.
+\end{itemize}
+
+La Entrega 1A cubrió la fase de planificación y elicitación. La presente Entrega 2 (1B) acumula y reemplaza a la Entrega 1A, incorpora las correcciones señaladas por el docente y añade las secciones correspondientes a los requisitos específicos formalizados (RF y NFR), interfaces externas mediante mockups, modelado UML, priorización MoSCoW y la matriz de trazabilidad parcial.
 
 \subsection{Alcance del producto}
 
+\textbf{Nombre del software:} AquaGest --- Sistema para la Gestión Inteligente de Camaroneras.
+
+\vspace{0.3cm}
+
+\textbf{¿Qué hará el sistema?}
+
+\begin{itemize}
+    \item Gestionar el registro y seguimiento de estanques/piscinas (identificación, estado, capacidad de siembra).
+    \item Controlar el ciclo completo de siembra: fechas, cantidad de larvas, proveedor y responsable.
+    \item Registrar y monitorear parámetros del agua (oxígeno, pH, temperatura, salinidad, turbidez, alcalinidad) con alertas automáticas ante valores fuera de rango.
+    \item Gestionar el plan de alimentación diario por estanque, ajuste de raciones y registro de consumo.
+    \item Administrar el historial sanitario: detección de enfermedades, tratamientos y seguimiento.
+    \item Gestionar empleados, sus roles y la asignación de tareas diarias.
+    \item Controlar inventario de bodega (balanceado, medicinas, herramientas, repuestos, combustible).
+    \item Registrar cosechas y calcular rendimiento por estanque/hectárea.
+    \item Generar reportes de producción, costos y análisis comparativos entre ciclos.
+    \item Incorporar componentes de Inteligencia Artificial para predicción de cosecha óptima, detección de anomalías en parámetros de agua y recomendaciones de alimentación~\cite{ref2}.
+\end{itemize}
+
+\textbf{¿Qué NO hará el sistema (exclusiones explícitas)?}
+
+\begin{itemize}
+    \item No gestionará la logística de transporte hacia mercados externos.
+    \item No incluirá módulos de contabilidad general ni facturación.
+    \item No controlará sistemas de riego externos a la camaronera.
+    \item No ofrecerá integración con plataformas de comercio electrónico.
+\end{itemize}
+
+\textbf{Beneficios esperados:}
+
+\begin{itemize}
+    \item Reducción de pérdidas por mortalidad no detectada oportunamente.
+    \item Optimización del uso de alimento balanceado.
+    \item Trazabilidad completa de cada ciclo productivo.
+    \item Toma de decisiones basada en datos e inteligencia artificial.
+\end{itemize}
 
 \subsection{Definiciones, acrónimos y abreviaturas}
 
-
+A continuación, se presentan las definiciones de los términos, acrónimos y abreviaturas utilizados en el presente documento.
+\begin{longtable}{|p{4cm}|p{11cm}|}
+\caption{Glosario de términos, acrónimos y abreviaturas.}
+\label{tab:glosario} \\
+\hline
+\textbf{Término} & \textbf{Definición} \\
+\hline
+ERS / SRS & Especificación de Requisitos de Software / Software Requirements Specification. \\
+\hline
+RF & Requisito Funcional: define qué debe hacer el sistema. \\
+\hline
+RNF & Requisito No Funcional: define cómo debe comportarse el sistema (calidad). \\
+\hline
+Estanque / Piscina & Área delimitada con agua donde se cultiva el camarón. \\
+\hline
+Siembra & Proceso de introducir larvas de camarón en un estanque preparado. \\
+\hline
+Grameo & Medición periódica del peso promedio del camarón para evaluar su crecimiento. \\
+\hline
+Larva & Estadio juvenil del camarón (\textit{Litopenaeus vannamei}) al momento de la siembra. \\
+\hline
+Balanceado & Alimento granulado formulado para el camarón, disponible en distintos tamaños según etapa. \\
+\hline
+Atarrayeo & Técnica de muestreo con red para estimar la población y peso del camarón en el estanque. \\
+\hline
+Biomasa & Cantidad total estimada de camarón en una piscina (expresada en kg o libras). \\
+\hline
+Parámetros del agua & Variables fisicoquímicas: oxígeno disuelto, pH, temperatura, salinidad, turbidez y alcalinidad. \\
+\hline
+FCR & Food Conversion Ratio: índice de eficiencia alimenticia (alimento consumido / biomasa ganada). \\
+\hline
+RBAC & Role-Based Access Control: control de acceso basado en roles. \\
+\hline
+MoSCoW & Técnica de priorización: Must have / Should have / Could have / Won't have. \\
+\hline
+IA & Inteligencia Artificial aplicada a predicción, detección de anomalías y recomendaciones. \\
+\hline
+IoT & Internet de las Cosas: sensores conectados para captura automática de datos. \\
+\hline
+IEEE & Institute of Electrical and Electronics Engineers. \\
+\hline
+ISO/IEC & International Organization for Standardization / International Electrotechnical Commission. \\
+\hline
+UTEQ & Universidad Técnica Estatal de Quevedo. \\
+\hline
+ISR-401 / 20303 & Código de la asignatura Ingeniería de Requisitos, cuarto nivel. \\
+\hline
+\end{longtable}
 
 \subsection{Referencias}
 
+Las referencias completas se encuentran al final del documento. Las principales fuentes normativas y bibliográficas son:
+
+\begin{itemize}
+    \item IEEE/ISO/IEC 29148:2018 --- \textit{Requirements Engineering} [1].
+    \item ISO/IEC 25010:2023 --- \textit{Systems and Software Quality Requirements} (taxonomía RNF).
+    \item \textit{SWEBOK Guide v4.0}, IEEE Computer Society, 2024.
+    \item Estudios sobre sistemas inteligentes de acuicultura [2-4].
+    \item Metodologías de elicitación y priorización de requisitos [5–7].
+    \item Entrevista realizada a Christian Leonel Franco Anchundia, Administrador de la Compañía Biofina, 28 de mayo de 2026 (ver Apéndice B).
+    \item Encuesta aplicada al personal operativo de la Compañía Biofina, junio de 2026 (ver Apéndice B).
+\end{itemize}
+
+\subsection{Visión general del documento}
+
+El presente ERS se organiza de la siguiente manera:
+
+\begin{itemize}
+    \item \textbf{Sección 1 (Introducción):} propósito, alcance, glosario y referencias.
+    
+    \item \textbf{Sección 2 (Descripción General):} perspectiva del producto, funciones principales, características de usuarios, restricciones y suposiciones.
+    
+    \item \textbf{Sección 3 (Requisitos Específicos):} interfaces externas con mockups, requisitos funcionales (plantilla de 8 atributos), requisitos no funcionales cuantificados según ISO/IEC 25010, y restricciones de diseño.
+    
+    \item \textbf{Sección 4 (Modelado UML):} diagrama de casos de uso general, casos de uso detallados y diagrama de clases conceptual.
+    
+    \item \textbf{Apéndice A (Plan del Proyecto de IR):} identificación de stakeholders (incluyendo matriz interés-influencia), cronograma y técnicas de elicitación.
+    
+    \item \textbf{Apéndice B (Evidencias de Elicitación):} guía de entrevista, acta de reunión, resultados de la encuesta y registro de evidencias de campo (incluye análisis de documentos físicos).
+    
+    \item \textbf{Apéndice C (Clasificación y Priorización MoSCoW):} clasificación de todos los requisitos con su prioridad justificada.
+    
+    \item \textbf{Apéndice D (Matriz de Trazabilidad):} trazabilidad parcial evidencia → requisito → caso de uso.
+    
+    \item \textbf{Apéndice E (Repositorio GitHub):} estructura del repositorio y enlace a los commits del proyecto, disponible en \url{https://github.com}.
+    
+\end{itemize}
 
 
 % =====================================================================
@@ -127,36 +257,208 @@ ING. GUERRERO ULLOA GLEISTON CICERON\\[0.5cm]
 % =====================================================================
 
 \subsection{Perspectiva del producto}
+AquaGest es un sistema de información nuevo, diseñado para reemplazar los procesos manuales actuales de la Compañía Biofina (Camaronera El Guasmo). Actualmente, el registro de actividades se realiza en hojas de papel y cuadernos físicos, sin trazabilidad digital ni capacidad analítica [2].
+El sistema operará como una aplicación web accesible desde navegadores de escritorio y dispositivos móviles. Se integrará con sensores IoT para la captura automática de parámetros del agua [3], y contará con un módulo de IA para análisis predictivo.
+
+\textbf{Diagrama de Contexto del Sistema (System Boundary):}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{DCONTEXTO.png}
+    \caption{Diagrama de Contexto del Sistema}
+    \label{fig:diagrama_contexto}
+\end{figure}
+
+
+\textbf{Actores externos:}
+\begin{itemize}
+    \item Administrador.
+    \item Técnico Acuícola.
+    \item Operario de Producción.
+    \item Operador de Maquinaria.
+    \item Supervisor Técnico de Mantenimiento.
+    \item Bodeguero.
+\end{itemize}
+
+\textbf{Sistemas externos:}
+\begin{itemize}
+    \item Sensores IoT (agua/ambiente).
+    \item Módulo de IA (predicciones).
+\end{itemize}
 
 
 \subsection{Funciones del producto}
+A continuación un resumen de alto nivel de las funciones principales de AquaGest:
 
+\begin{itemize}
+    \item \textbf{Gestión de Estanques:} registro, consulta y actualización del estado de cada piscina (activa, en preparación, en cosecha, inactiva).
+    
+    \item \textbf{Control de Siembras:} registro de cada ciclo productivo con información de larvas, proveedor y seguimiento semanal de grameo.
+    
+    \item \textbf{Monitoreo de Parámetros del Agua:} visualización en tiempo real y alertas automáticas cuando los valores salen del rango óptimo.
+    
+    \item \textbf{Gestión de Alimentación:} cálculo y registro diario de raciones por estanque, ajuste según biomasa estimada.
+    
+    \item \textbf{Historial Sanitario:} registro de incidentes, diagnósticos y tratamientos aplicados.
+    
+    \item \textbf{Gestión de Empleados y Tareas:} administración de roles, asignación de actividades diarias y control de cumplimiento.
+    
+    \item \textbf{Inventario de Bodega:} control de stock de insumos (balanceado, medicinas, repuestos, combustible).
+    
+    \item \textbf{Gestión de Cosechas:} registro de rendimiento, peso total y talla del camarón por estanque.
+    
+    \item \textbf{Reportes y Análisis:} generación de reportes de producción, costos y comparativos entre ciclos.
+    
+    \item \textbf{Módulo de Inteligencia Artificial:} predicción de momento óptimo de cosecha, detección de anomalías en calidad del agua y recomendaciones de alimentación.
+\end{itemize}
 
 \subsection{Clases y características de usuarios}
+La siguiente tabla describe los diferentes tipos de usuarios del sistema y sus principales características.
 
+\begin{longtable}{|p{4cm}|p{5cm}|p{2.8cm}|p{3cm}|}
+\caption{Clases y características de los usuarios del sistema.}
+\label{tab:usuarios} \\
+\hline
+\textbf{Tipo de Usuario} & \textbf{Descripción} & \textbf{Nivel Técnico} & \textbf{Frecuencia de Uso} \\
+\hline
+Coordinador / Administrador & Toma decisiones estratégicas, supervisa operaciones, genera reportes gerenciales. & Medio & Diaria \\
+\hline
+Técnico Acuícola & Monitorea y controla parámetros de agua, evalúa salud del cultivo. & Alto & Varias veces al día \\
+\hline
+Operario de Producción & Registra actividades de siembra, alimentación y grameo. & Bajo-Medio & Diaria \\
+\hline
+Operador de Maquinaria & Reporta fallas de equipos (bombas, aireadores, vehículos). & Bajo & Ocasional \\
+\hline
+Supervisor Técnico de Mantenimiento & Gestiona órdenes de mantenimiento preventivo y correctivo. & Medio & Diaria \\
+\hline
+Bodeguero & Administra entradas y salidas de inventario de insumos. & Bajo-Medio & Diaria \\
+\hline
+\end{longtable}
+
+\vspace{0.3cm}
 
 
 \subsection{Mapa de stakeholders}
+La siguiente tabla presenta la clasificación de los stakeholders del proyecto según la matriz poder--interés y la estrategia de gestión definida para cada uno.
 
+\captionsetup{width=\textwidth}
+\begin{longtable}{|p{4cm}|p{1.3cm}|p{1.5cm}|p{3cm}|p{5cm}|}
+\caption{Mapa de stakeholders del proyecto según la matriz poder--interés.}
+\label{tab:stakeholders} \\
+\hline
+\textbf{Stakeholder} & \textbf{Poder} & \textbf{Interés} & \textbf{Cuadrante} & \textbf{Estrategia de gestión} \\
+\hline
+Christian Franco Anchundia (Administrador, Biofina) & Alto & Alto & Gestionar de cerca & Comunicación frecuente, validación directa de requisitos \\
+\hline
+Técnico Acuícola & Medio & Alto & Mantener informado & Consultas periódicas, prioridad en validación de RF de monitoreo \\
+\hline
+Operario de Producción & Medio & Alto & Mantener informado & Involucrar en pruebas de usabilidad de siembra/alimentación \\
+\hline
+Bodeguero & Medio & Alto & Mantener informado & Validar RF de inventario antes de cierre de Apéndice C \\
+\hline
+Supervisor Técnico de Mantenimiento & Media & Media & Mantener satisfecho & Informar avances del módulo de mantenimiento \\
+\hline
+Operador de Maquinaria & Baja & Media & Monitorear & Comunicación mínima, reportes de avance generales \\
+\hline
+Equipo de desarrollo (estudiantes UTEQ) & Alta & Alta & Gestionar de cerca & Reuniones internas de seguimiento semanal \\
+\hline
+Mg. Gleiston Guerrero Ulloa (docente evaluador) & Alta & Media & Mantener satisfecho & Entregables conforme a cronograma y rúbrica \\
+\hline
+\end{longtable}
 
 \subsection{Entorno operativo}
+\textbf{Software:} el sistema deberá ser una aplicación web compatible con los navegadores Chrome (v100+) y Firefox (v100+). La base de datos deberá ser relacional (PostgreSQL o MySQL).
+
+\textbf{Conectividad:} las instalaciones de la camaronera cuentan con conectividad a internet limitada; el sistema deberá soportar operación offline con sincronización posterior para los módulos críticos (registro de alimentación y parámetros de agua).
+
+\textbf{Hardware:} los dispositivos de usuario serán principalmente tabletas Android y computadoras de escritorio de gama media. El sistema no podrá requerir hardware especializado en el lado del cliente.
+
+\textbf{Integración externa:} sensores IoT para parámetros del agua (pH, oxígeno, temperatura, salinidad, turbidez, alcalinidad), adquiridos de forma independiente por la empresa.
 
 \subsection{Restricciones}
 
+\textbf{Regulatorias:} el sistema deberá cumplir con la normativa ecuatoriana de acuicultura y las disposiciones de la Subsecretaría de Acuacultura del Ecuador.
+
+
+\textbf{Seguridad:} los datos de producción son confidenciales para la empresa; se requerirá autenticación de usuarios y control de acceso basado en roles (RBAC).
+
+
+\textbf{Presupuesto:} el desarrollo deberá priorizar soluciones de bajo costo (frameworks y bibliotecas de código abierto).
+
 \subsection{Suposiciones y dependencias}
-
-
+\begin{itemize}
+    \item Se asume que la Compañía Biofina dispondrá de al menos un servidor local o servicio de nube para el alojamiento del sistema.
+    
+    \item Se asume que los usuarios recibirán capacitación básica para el uso del sistema antes de su despliegue.
+    
+    \item Se asume que los sensores IoT para parámetros del agua serán adquiridos por la empresa de forma independiente al desarrollo del software.
+    
+    \item Si la empresa decide cambiar de proveedor de almacenamiento en la nube, los requisitos de portabilidad de datos deberán revisarse.
+    
+    \item La precisión del módulo de IA dependerá de la disponibilidad de datos históricos de al menos dos ciclos productivos completos.
+\end{itemize}
+% =====================================================================
 \section{Requisitos específicos}
-
+% =====================================================================
 
 \subsection{Interfaces externas}
 
 \subsubsection{Interfaz de usuario}
+La siguiente tabla presenta las principales interfaces de usuario del sistema, su descripción y los requisitos funcionales que soportan.
 
+\begin{longtable}{|p{4cm}|p{7cm}|p{4cm}|}
+\caption{Interfaces de usuario del sistema y requisitos funcionales asociados.}
+\label{tab:interfaz_usuario} \\
+\hline
+\textbf{Pantalla} & \textbf{Descripción} & \textbf{RF que soporta} \\
+\hline
+
+Login / Selección de rol & Autenticación con usuario y contraseña; redirección según rol (RBAC). & RF-17, RF-18 \\
+\hline
+
+Dashboard general & Resumen de estanques activos, alertas pendientes (agua, sanitarias, inventario) y accesos rápidos según rol. & RF-04, RF-10, RF-16, RF-20 \\
+\hline
+
+Gestión de Estanques & Listado de piscinas con estado, capacidad, formulario de alta/edición. & RF-01, RF-02, RF-03, RF-04 \\
+\hline
+
+Registro de Siembra & Formulario de nueva siembra (fecha, larvas, proveedor, responsable) y vista de historial por estanque. & RF-05, RF-06, RF-07, RF-08 \\
+\hline
+
+Monitoreo de Parámetros del Agua & Vista en tiempo real (tabla o gráfico) de pH, oxígeno, temperatura, salinidad, turbidez, alcalinidad, con indicador de alerta. & RF-09, RF-10, RF-11 \\
+\hline
+
+Plan de Alimentación & Cálculo de ración diaria sugerida y formulario de registro de consumo real por estanque. & RF-12, RF-13, RF-14 \\
+\hline
+
+Historial Sanitario & Registro de incidentes (síntomas, diagnóstico, tratamiento) y listado de alertas de mortalidad. & RF-15, RF-16 \\
+\hline
+
+Gestión de Empleados y Tareas & Alta de empleados, asignación de roles y tareas diarias, vista de cumplimiento. & RF-17, RF-18 \\
+\hline
+
+Inventario de Bodega & Entradas/salidas de insumos, niveles de stock y alertas de stock mínimo. & RF-19, RF-20 \\
+\hline
+
+Órdenes de Mantenimiento & Registro y seguimiento de mantenimiento preventivo/correctivo de equipos. & RF-21 \\
+\hline
+
+Registro de Cosecha & Formulario de cosecha (peso, talla, rendimiento) y cálculo de costo de producción. & RF-22, RF-23 \\
+\hline
+
+Reportes y Comparativos & Generación de reportes de producción, costos y comparación entre ciclos. & RF-24 \\
+\hline
+
+Panel de IA & Predicción de cosecha óptima, anomalías detectadas y recomendaciones de alimentación. & RF-25 \\
+\hline
+
+\end{longtable}
 
 \subsubsection{Interfaz de hardware}
 
+\textbf{Sensores IoT:} dispositivos de medición de pH, oxígeno disuelto, temperatura, salinidad, turbidez y alcalinidad, instalados en cada estanque. Comunicación inalámbrica (WiFi o LoRa, según disponibilidad de cobertura en campo) hacia un gateway local que sincroniza con el servidor central.
 
+\textbf{Dispositivos cliente:} tabletas Android (mínimo Android 10) para captura en campo y computadoras de escritorio de gama media para roles administrativos. No se requiere hardware especializado adicional en el lado del cliente.
 
 \subsubsection{Interfaz de software}
 
@@ -278,14 +580,11 @@ ING. GUERRERO ULLOA GLEISTON CICERON\\[0.5cm]
 \section{Matriz de trazabilidad parcial (completa)}
 
 
-\subsection{Propósito y Alcance}
-
 \subsection{Matriz de Trazabilidad}
 
 
 
 \subsection{Cobertura de Trazabilidad}
 
-\section{Repositorio GitHub}
 
 \end{document}
